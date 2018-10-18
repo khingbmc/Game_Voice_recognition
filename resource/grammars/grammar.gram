@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar 
+ */
+
+grammar grammar;
+
+public <movement> = (forward | jump | back | shoot);
+
+/**
+*public <operations> = <number>{1} (plus|minus|division|multiply) <number>{2};
+*/
+public <character> = (a | b | c| d);
