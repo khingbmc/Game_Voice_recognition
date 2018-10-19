@@ -11,12 +11,13 @@ public class Vajaman extends Game{
 	@Override
 	public void create() {
 		this.screen = new GameScreen(this);
+		this.setScreen(screen);
 		
 	}
 	@Override
 	public void render() {
 		// TODO Auto-generated method stub
-		Gdx.gl.glClearColor(255f/255f, 0f, 0f/255f, 0f); //rgba range of value is between [0, 1]
+		Gdx.gl.glClearColor(0, 0f, 0f/255f, 0f); //rgba range of value is between [0, 1]
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		super.render();
 	}
