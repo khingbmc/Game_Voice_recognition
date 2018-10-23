@@ -1,4 +1,4 @@
-package model;
+package com.vajajava.model;
 
 import java.io.IOException;
 import java.util.List;
@@ -63,7 +63,49 @@ public class SpeechMain {
 				this.speechRecognizerThreadRunning = true;
 				this.ignoreSpeechResult = false;
 				
+				this.recognizer.startRecognition(true);
+				
+				//Information			
+				logger.log(Level.INFO, "You can start to speak...\n");
+				
+
+				try {
+					while (speechRecognizerThreadRunning) {
+						
+						SpeechResult speechResult = this.recognizer.getResult();
+						
+						//Check if we ignore the speech recognition results
+						if (!this.ignoreSpeechResult) {
+							
+							//Check the result
+							if (speechResult == null)
+								logger.log(Level.INFO, "I can't understand what you said.\n");
+							else {
+								
+								//Get the hypothesis (predict word you said)
+								this.result = speechResult.getHypothesis();
+								
+								//You said?
+								System.out.println("ขิงมึงพูดว่า: [" + this.result + "]\n");
+								
+								//Call the appropriate method 
+								
+								
+							}
+						} else
+							logger.log(Level.INFO, "Ingoring Speech Recognition Results...");
+						
+					}
+				} catch (Exception ex) {
+					logger.log(Level.WARNING, null, ex);
+					speechRecognizerThreadRunning = false;
+				}
+				
+				logger.log(Level.INFO, "SpeechThread has exited...");
+				
 			});
-		}
 	}
-}
+		}
+	
+	}
+

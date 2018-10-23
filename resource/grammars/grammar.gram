@@ -6,7 +6,7 @@
 
 grammar grammar;
 
-public <movement> = (forward | jump | back | shoot);
+public <movement> = (up | right | down | left);
 
 /**
 *public <operations> = <number>{1} (plus|minus|division|multiply) <number>{2};

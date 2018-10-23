@@ -1,4 +1,4 @@
-package model;
+package com.vajajava.model;
 
 import java.io.IOException;
 import java.util.List;
@@ -242,12 +242,5 @@ public class SpeechRecognizerMain {
 		return speechRecognizerThreadRunning;
 	}
 	
-	/**
-	 * Main Method
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		new SpeechRecognizerMain();
-	}
+	
 }
